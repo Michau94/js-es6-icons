@@ -9,6 +9,10 @@
 
 /* * utils * */
 
+.font-nav {
+    font-family: 'Pacifico', cursive;
+}
+
 .filter-bar {
     height: 100px;
 }
@@ -20,7 +24,7 @@
 /* HEADER */
 
 main {
-    height: calc(100vh - 134px);
+    height: 100%;
 }
 
 #filter {
@@ -51,4 +55,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card {
+    overflow: hidden;
+    box-shadow: 2px 1px 1px black;
 }
