@@ -32,32 +32,29 @@ const renderIcons = (arr, targetElement) => {
 
 }
 
-// stampa su html con funzione
+
+
+// #Filtro
 
 
 const selectField = document.getElementById('filter');
 
 selectField.addEventListener('change', () => {
 
-    const selectValue = selectField.value;
+    let selectValue = selectField.value;
 
     if (selectValue === 'all') {
 
         renderIcons(icons, display);
+        return;
     }
 
 
-    const filtered = [];
-    icons.forEach((item) => {
-
-
-        if (selectValue === `${item.type}`) {
-
-            filtered.push(item);
-        }
-        renderIcons(filtered, display)
-
+    const filtered = icons.filter((item) => {
+        return selectValue === item.type ? true : false;
     });
+
+    renderIcons(filtered, display)
 
 })
 
