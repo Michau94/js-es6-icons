@@ -39,8 +39,7 @@ const renderOptions = (arr, targetElement) => {
 // render icon type
 renderOptions(icons, selectField);
 
-
-// icon render
+//#icon render
 
 const renderIcons = (arr, targetElement) => {
 
@@ -49,7 +48,7 @@ const renderIcons = (arr, targetElement) => {
 
 
         itemTemplate +=
-            ` <div class="col-4">
+            ` <div class=" col col-sm-4 col-md-3">
                         <div class="card text-center">
                             <div class="card-body">
                                 <i class="${item.family} ${item.prefix}${item.name} fa-2x ${item.type}"></i>
@@ -90,6 +89,7 @@ selectField.addEventListener('change', () => {
 
 
 //# Bonus search per nome in tempo reale
+
 inputField.addEventListener('keyup', () => {
 
     const inputValue = inputField.value;
