@@ -5,3 +5,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* HEADER */
+
+.filter-bar {
+    height: 100px;
+}
+
+#filter {
+    width: 30%;
+}
+
+/* MAIN */
