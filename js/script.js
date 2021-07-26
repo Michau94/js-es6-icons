@@ -7,6 +7,8 @@ const selectField = document.getElementById('filter');
 
 const inputField = document.getElementById('search');
 
+const alertMessage = document.querySelector('main .alert');
+
 //# FUNZIONI
 
 // #dinamic filter type
@@ -92,10 +94,32 @@ selectField.addEventListener('change', () => {
 
 inputField.addEventListener('keyup', () => {
 
+    alertMessage.classList.add('hidden');
+
+
     const inputValue = inputField.value;
 
     const search = icons.filter((item) => item.name.includes(inputValue));
     renderIcons(search, display);
+
+    console.log(search);
+
+    if (!search.length) {
+
+
+        alertMessage.classList.remove('hidden');
+        alertMessage.innerHTML = 'No Matches Found!';
+        display.innerHTML = '';
+
+
+
+    }
+
+
+
+
+
+
 
 
 });
