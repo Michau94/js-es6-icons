@@ -36,26 +36,56 @@ const renderIcons = (arr, targetElement) => {
 
 // #Filtro
 
-
+// select element
 const selectField = document.getElementById('filter');
 
+
+// on change
 selectField.addEventListener('change', () => {
 
-    let selectValue = selectField.value;
+    const selectValue = selectField.value;
 
     if (selectValue === 'all') {
-
         renderIcons(icons, display);
         return;
     }
 
 
-    const filtered = icons.filter((item) => {
-        return selectValue === item.type ? true : false;
-    });
+    const filtered = icons.filter((item) => selectValue === item.type);
+    renderIcons(filtered, display);
 
-    renderIcons(filtered, display)
+});
 
+
+// #dinamic filter type
+
+let iconTypes = [];
+icons.forEach((item) => {
+    if (!iconTypes.includes(item.type)) {
+        iconTypes.push(item.type);
+    }
 })
+
+console.log(iconTypes);
+
+
+selectOption = '<option value="all" selected>All</option>';
+
+iconTypes.forEach((type) => {
+
+    selectOption += `<option value="${type}" selected>${type}</option>`;
+
+    console.log(type);
+});
+
+selectField.innerHTML = selectOption;
+
+
+
+
+
+
+
+
 
 
