@@ -26,14 +26,15 @@ const renderOptions = (arr, targetElement) => {
     console.log(iconTypes);
 
 
-    selectOption = '<option value="all" selected>all</option>';
+    selectOption = '<option value="all" selected >all</option>';
     iconTypes.forEach((type) => {
 
-        selectOption += `<option value="${type}" selected>${type}</option>`;
+        selectOption += `<option value="${type}">${type}</option>`;
 
         console.log(type);
     });
 
+    console.log(selectOption);
     targetElement.innerHTML = selectOption;
 
 };
@@ -66,6 +67,8 @@ const renderIcons = (arr, targetElement) => {
     });
 
 }
+
+renderIcons(icons, display);
 
 
 
