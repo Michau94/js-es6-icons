@@ -18,7 +18,7 @@ const renderIcons = (arr, targetElement) => {
             ` <div class="col-4">
                         <div class="card text-center">
                             <div class="card-body">
-                                <i class="${item.family} ${item.prefix}${item.name} fa-2x"></i>
+                                <i class="${item.family} ${item.prefix}${item.name} fa-2x ${item.type}"></i>
                                 <h2>${item.name.toLocaleUpperCase()}</h2>
                             </div>
                         </div>
