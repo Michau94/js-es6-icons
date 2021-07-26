@@ -2,11 +2,45 @@
 
 const display = document.querySelector('.container > .row');
 
+// select element
+const selectField = document.getElementById('filter');
+
+const inputField = document.getElementById('search');
 
 //# FUNZIONI
 
+// #dinamic filter type
 
-// stampa template icone
+const renderOptions = (arr, targetElement) => {
+
+
+    let iconTypes = [];
+    arr.forEach((item) => {
+        if (!iconTypes.includes(item.type)) {
+            iconTypes.push(item.type);
+        }
+    })
+
+    console.log(iconTypes);
+
+
+    selectOption = '<option value="all" selected>All</option>';
+    iconTypes.forEach((type) => {
+
+        selectOption += `<option value="${type}" selected>${type}</option>`;
+
+        console.log(type);
+    });
+
+    targetElement.innerHTML = selectOption;
+
+};
+
+// render icon type
+renderOptions(icons, selectField);
+
+
+// icon render
 
 const renderIcons = (arr, targetElement) => {
 
@@ -34,10 +68,8 @@ const renderIcons = (arr, targetElement) => {
 
 
 
-// #Filtro
+// #Filter
 
-// select element
-const selectField = document.getElementById('filter');
 
 
 // on change
@@ -50,35 +82,31 @@ selectField.addEventListener('change', () => {
         return;
     }
 
-
     const filtered = icons.filter((item) => selectValue === item.type);
     renderIcons(filtered, display);
 
 });
 
 
-// #dinamic filter type
 
-let iconTypes = [];
-icons.forEach((item) => {
-    if (!iconTypes.includes(item.type)) {
-        iconTypes.push(item.type);
-    }
-})
+//# Bonus search per nome in tempo reale
+inputField.addEventListener('keyup', () => {
 
-console.log(iconTypes);
+    const inputValue = inputField.value;
 
+    const search = icons.filter((item) => item.name.includes(inputValue));
+    renderIcons(search, display);
 
-selectOption = '<option value="all" selected>All</option>';
-
-iconTypes.forEach((type) => {
-
-    selectOption += `<option value="${type}" selected>${type}</option>`;
-
-    console.log(type);
 });
 
-selectField.innerHTML = selectOption;
+
+
+
+
+
+
+
+
 
 
 
