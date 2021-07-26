@@ -32,6 +32,33 @@ const renderIcons = (arr, targetElement) => {
 
 }
 
-
 // stampa su html con funzione
-renderIcons(icons, display);
+
+
+const selectField = document.getElementById('filter');
+
+selectField.addEventListener('change', () => {
+
+    const selectValue = selectField.value;
+
+    if (selectValue === 'all') {
+
+        renderIcons(icons, display);
+    }
+
+
+    const filtered = [];
+    icons.forEach((item) => {
+
+
+        if (selectValue === `${item.type}`) {
+
+            filtered.push(item);
+        }
+        renderIcons(filtered, display)
+
+    });
+
+})
+
+
