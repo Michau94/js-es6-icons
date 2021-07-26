@@ -26,7 +26,7 @@ const renderOptions = (arr, targetElement) => {
     console.log(iconTypes);
 
 
-    selectOption = '<option value="all" selected>All</option>';
+    selectOption = '<option value="all" selected>all</option>';
     iconTypes.forEach((type) => {
 
         selectOption += `<option value="${type}" selected>${type}</option>`;
@@ -99,7 +99,7 @@ inputField.addEventListener('keyup', () => {
 
     const inputValue = inputField.value;
 
-    const search = icons.filter((item) => item.name.includes(inputValue));
+    const search = icons.filter((item) => item.name.includes(inputValue.toLowerCase()));
     renderIcons(search, display);
 
     console.log(search);
