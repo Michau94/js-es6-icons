@@ -97,6 +97,7 @@ inputField.addEventListener('keyup', () => {
     const search = icons.filter((item) => item.name.includes(inputValue));
     renderIcons(search, display);
 
+
 });
 
 

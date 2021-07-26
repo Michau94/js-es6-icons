@@ -4,12 +4,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* * utils * */
+
+.filter-bar {
+    height: 100px;
 }
 
 /* HEADER */
 
-.filter-bar {
-    height: 100px;
+main {
+    height: calc(100vh - 134px);
 }
 
 #filter {
@@ -32,4 +39,12 @@
 
 .user {
     color: purple;
+}
+
+.card-body {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
